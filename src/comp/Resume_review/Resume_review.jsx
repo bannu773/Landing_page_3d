@@ -6,7 +6,7 @@ import "./StarPoint.css"
 const Resume_review = () => {
   return (
     <div>
-      <div className="multi-pages" style={{height : "100vh"}} >
+      <div className="multi-pages" style={{height : "100vh",overflow : "hidden"}} >
         <div className=" sub--multipages">
           <div className="mutlipage-left">
             <div>
