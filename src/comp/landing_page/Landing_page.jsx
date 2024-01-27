@@ -11,7 +11,7 @@ const Landing_page = () => {
     <div className='main_container '>
       <Land_3d />
       <Resume_review />
-      {/* <TimeLine /> */}
+      <TimeLine />
 
     </div>
   )
