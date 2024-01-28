@@ -14,7 +14,7 @@ const TimeLine = ({ timelineRef }) => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   return (
-    <div className="bg bg-black" style={{ backgroundRepeat: "repeat" }}>
+    <div className="bg bg-black" style={{ backgroundRepeat: "repeat", borderBottomLeftRadius:"50px" , borderBottomRightRadius:"50px"}}>
       <style>
         {`
           /* Apply scale transformation on hover */
@@ -182,7 +182,7 @@ const TimeLine = ({ timelineRef }) => {
               className="vertical-timeline-element--work outergrad shadow-block"
               date=""
               contentStyle={{
-                background: "rgba(144, 19, 254, 0.15)",
+                background: "rgba(210, 0, 138, 0.15)",
                 boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
                 backdropFilter: "blur(2px)",
                 WebkitBackdropFilter: "blur(2px)",

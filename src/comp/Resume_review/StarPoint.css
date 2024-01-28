@@ -19,8 +19,6 @@
     justify-content: center;
     align-items: center;
 }
-
-
 .mutlipage-left{
     display: flex;
     flex-direction: column;
