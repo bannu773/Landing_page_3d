@@ -1,27 +1,63 @@
 .login-container {
   display: flex;
-  background-image: url('../../assets//login-right-vedio.jpg');
+  /* background-image: url('../../assets//login-right-vedio.jpg'); */
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
   background-repeat: no-repeat;
- background-size: cover;
-
+  background-size: cover;
+}
+.signup-container {
+  background-image: linear-gradient(
+    to right top,
+    #04335e,
+    #004a6f,
+    #14617d,
+    #327888,
+    #528e93,
+    #528e93,
+    #528e93,
+    #528e93,
+    #327888,
+    #14617d,
+    #004a6f,
+    #04335e
+  );
 }
 .left-container {
-
   width: 50%;
   height: 100vh;
 }
 .right-container {
-  background-repeat: no-repeat;
- background-size: cover;
- background-position: left;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 50%;
-  backdrop-filter: blur(2px); 
+  backdrop-filter: blur(2px);
   align-items: center;
   text-align: center;
+}
+.login-head-container {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 40px 20px;
 }
 .login-gif {
   width: 100%;
@@ -34,39 +70,40 @@
   0% {
     transform: scale(0.9, 0.9);
   }
- 
+
   100% {
-    transform: scale(1,1);
+    transform: scale(1, 1);
   }
 }
 
-.input-field{
-  width: 50%;
+.input-field {
+  width: 90%;
 }
-.login-heading{
+.login-heading {
   font-size: 40px;
   color: white;
   font-weight: bold;
-
 }
-.login-head-container{
+.login-head-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  width: 65%;
 }
-.login-boy{
+.login-boy {
   animation: boymoving 4s infinite alternate;
   position: relative;
- 
-  
 }
 @keyframes boymoving {
-    from {left:-20%}
-    to {left : 20%}
+  from {
+    left: -20%;
+  }
+  to {
+    left: 20%;
+  }
 }
-
 
 .login-data {
   width: 100%;
@@ -106,7 +143,6 @@ form input {
   }
 }
 
-
 .login-data .lg-btn button {
   background-color: rgba(7, 16, 51, 0.217);
   outline: none;
@@ -134,7 +170,6 @@ form input {
   }
 }
 
-
 .right-container .lg-btn h4 {
   color: rgb(255, 254, 254);
   font-size: 14px;
@@ -144,23 +179,28 @@ form input {
     text-decoration: none;
     color: white;
     font-size: large;
-    color: orange;
+    color: rgb(5, 1, 129);
     padding-left: 12px;
     cursor: pointer;
   }
 }
-
-
+.error-msg {
+  color: red;
+  font-size: 13px;
+}
 
 @media only screen and (max-width: 768px) {
-  .left-container{
+  .left-container {
     display: none;
   }
-  .right-container{
+  .right-container {
     width: 100%;
     min-height: 100vh;
   }
-  .input-field{
+  .input-field {
     width: 80%;
+  }
+  .login-head-container {
+    width: 86%;
   }
 }
