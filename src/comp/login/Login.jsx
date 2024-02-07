@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logingif from "../../assets/undraw_stand_out_-1-oag.svg";
-import loginboy from "../../assets/login-boy.png";
+// import loginboy from "../../assets/login-boy.png";
+import { LoginService, forgotPasswordLinkService } from "../../services/AuthService";
+import { message } from "antd";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [loginDetails, setLoginDetails] = useState({
     email: "",
     password: "",
@@ -15,10 +18,25 @@ export default function Login() {
     setLoginDetails({ ...loginDetails, [name]: value });
   }
 
-  function handleSubmit(e){
+  const triggerForgotpassword = (data) => {
+    if (data.email === "") {
+      message.error("Please enter your email address");
+    }
+    const forgotpasswordlink = forgotPasswordLinkService(data)
+    if(forgotpasswordlink.success === true) {
+      navigate('/login')
+    }
+    console.log(data);
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(loginDetails);
-  }
+    const loginRes = await LoginService(loginDetails);
+    console.log(loginRes.success);
+    if (loginRes.success) {
+      navigate("/home");
+    }
+  };
+
   return (
     <div className=" login-container">
       <div className="left-container">
@@ -47,8 +65,18 @@ export default function Login() {
                 placeholder="   🔒 | Password"
               />
             </div>
+            <p
+              className=" input-field forgotpassword"
+              onClick={() =>
+                triggerForgotpassword({ email: loginDetails.email })
+              }
+            >
+              Forgot password ?
+            </p>
             <div className="lg-btn input-field">
-              <button className="login-btn" type="submit">LOGIN</button>
+              <button className="login-btn" type="submit">
+                LOGIN
+              </button>
               <h4 className="switch-signup">
                 Don't have an account?
                 <Link to="/signup">Register</Link>
