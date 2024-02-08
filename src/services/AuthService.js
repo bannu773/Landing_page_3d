@@ -38,7 +38,6 @@ export const SignUpService =  async(signupData)=>{
         };
         const res = await axios.post(`${BASE_URL}sendotp`, otpCredintials);
         if(res.data.success === true) {
-            console.log("lll")
             message.success(res.data.message)
         }else{
             message.error(res.data.message)
@@ -65,6 +64,25 @@ export const SignUpService =  async(signupData)=>{
         return res.data;
     }
     catch(error){
+        return error.message
+    }
+ }
+
+ export const changePasswordService = async(changePasswordData , value)=>{
+    try{
+        console.log(`${BASE_URL}/resetpassword/${value.id}`);
+
+        const res = await axios.post(`${BASE_URL}resetpassword/${value.id}`, changePasswordData); 
+        if(res.data.success === true) {
+            console.log("lll")
+            message.success(res.data.message)
+        }else{
+            message.error(res.data.message)
+        }
+        
+        return res.data;
+    }
+    catch(error){ 
         return error.message
     }
  }
